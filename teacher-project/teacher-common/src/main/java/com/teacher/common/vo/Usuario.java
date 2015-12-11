@@ -1,4 +1,4 @@
-package org.teacher.common.vo;
+package com.teacher.common.vo;
 
 import java.util.Date;
 

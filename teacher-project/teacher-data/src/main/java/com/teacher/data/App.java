@@ -1,4 +1,4 @@
-package org.teacher.data;
+package com.teacher.data;
 
 /**
  * Hello world!
