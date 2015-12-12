@@ -7,9 +7,10 @@
     <artifactId>teacher-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.teacher</groupId>
+  
   <artifactId>teacher-common</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <!-- <groupId>com.teacher</groupId>
+  <version>0.0.1-SNAPSHOT</version>  -->
   
   <name>teacher-common</name>
   <url>http://maven.apache.org</url>
