@@ -13,7 +13,7 @@ public class TestController {
 	@RequestMapping("/spring")
 	public ModelAndView showMessage(
 			@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
-		System.out.println("in controller");
+		System.out.println(message);
  
 		ModelAndView mv = new ModelAndView("spring");
 		mv.addObject("message", message);
