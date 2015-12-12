@@ -9,8 +9,6 @@
   </parent>
   
   <artifactId>teacher-data</artifactId>
-  <!-- <groupId>com.teacher</groupId>
-  <version>0.0.1-SNAPSHOT</version>  -->
   
   <name>teacher-data</name>
   <url>http://maven.apache.org</url>

@@ -9,8 +9,6 @@
   </parent>
   
   <artifactId>teacher-service</artifactId>
-  <!-- <groupId>com.teacher</groupId>
-  <version>0.0.1-SNAPSHOT</version> -->
   <packaging>war</packaging>
   <name>teacher-service Maven Webapp</name>
   <url>http://maven.apache.org</url>
