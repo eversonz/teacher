@@ -1,5 +1,8 @@
 <html>
+<head>
+<meta http-equiv="refresh" content="0; url=public/login.jsp" />
+</head>
 <body>
-<h2>Hello World! <a href="spring">click spring </a> </h2>
+...
 </body>
 </html>

@@ -1,4 +1,4 @@
-package com.teacher.service;
+package com.teacher.service.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
