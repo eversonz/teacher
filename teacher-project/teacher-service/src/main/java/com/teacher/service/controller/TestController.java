@@ -10,7 +10,7 @@ public class TestController {
 
 	String message = "Welcome to Spring MVC!";
 	 
-	@RequestMapping("/spring")
+	@RequestMapping("/spring-web")
 	public ModelAndView showMessage(
 			@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
 		System.out.println(message);
