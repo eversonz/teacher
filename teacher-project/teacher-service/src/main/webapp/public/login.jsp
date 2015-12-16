@@ -10,8 +10,12 @@
 ${error}
 
 	<form name='loginForm' action="<c:url value='/login' />" method='POST'>
-	 
+	 user - pass  <br/> 
+	 teacher - teacher <br/> 
+	 student - student <br/>
+	 <b>${error} </b> 
 		<table>
+		
 			<tr>
 				<td>User:</td>
 				<td><input type='text' name='j_username' value=''> </td>

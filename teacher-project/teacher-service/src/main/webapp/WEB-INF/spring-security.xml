@@ -7,6 +7,7 @@
 	<global-method-security pre-post-annotations="enabled"/>
 	
 	<http use-expressions="true" auto-config='true'>
+		<intercept-url pattern="/pages/template/**" access="isAuthenticated()" />
 		<intercept-url pattern="/pages/teacher/**" access="hasRole('ROLE_TEACHER')" />
 		<intercept-url pattern="/pages/student/**" access="hasRole('ROLE_STUDENT')" />
 		
