@@ -7,7 +7,7 @@
 </head>
 <body>
 
-${error}
+Error: ${param.error} <br/><br/>
 
 	<form name='loginForm' action="<c:url value='/login' />" method='POST'>
 	 user - pass  <br/> 

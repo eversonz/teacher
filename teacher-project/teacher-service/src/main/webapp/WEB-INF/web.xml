@@ -44,11 +44,11 @@
 
 	<error-page>
 		<error-code>404</error-code>
-		<location>/public/login.jsp?error=401</location>
+		<location>/pages/public/login.jsp?error=401</location>
 	</error-page>		
 	<error-page>
 		<error-code>403</error-code>
-		<location>/public/login.jsp?error=403</location>
+		<location>/pages/public/login.jsp?error=403</location>
 	</error-page>
 
 </web-app>	

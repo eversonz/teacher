@@ -13,7 +13,7 @@ $ mvn tomcat:run
 <br/>1
 <br/>
 
-<a href="<c:url value='/pages/teacher/page.jsp' />">${pageContext.request.userPrincipal.name}</a>
+<a href="<c:url value='/pages/teacher/page.jsp' />">Name: ${pageContext.request.userPrincipal.name}</a>
 <br/><br/>
 
 
@@ -25,7 +25,7 @@ $ mvn tomcat:run
 </sec:authorize>
  	 
 <br/><br/> 
-User: ${pageContext.request.userPrincipal} 
+Validação na classe WebSecurityConfiguration.java e spring-secury.xml
 
 
 </body>
