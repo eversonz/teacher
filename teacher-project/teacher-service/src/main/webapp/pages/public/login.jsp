@@ -10,9 +10,8 @@
 Error: ${param.error} <br/><br/>
 
 	<form name='loginForm' action="<c:url value='/login' />" method='POST'>
-	 user - pass  <br/> 
-	 teacher - teacher <br/> 
-	 student - student <br/>
+	 user:teacher - pass:teacher  <br/> 
+	 <br/> 
 	 <b>${error} </b> 
 		<table>
 		
@@ -30,6 +29,8 @@ Error: ${param.error} <br/><br/>
 			</tr>
 		</table>
 	</form>
-
+<br><br>
+$ export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n" <br>
+$ mvn tomcat:run
 </body>
 </html>
