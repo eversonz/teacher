@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
- 2<mapper namespace="com.teacher.data.mapper.UsuarioMapper">
- 3     <cache />
- 4 
- 5     <select id=login resultType="User">
- 6         SELECT id, nome, login FROM usuario
- 7     </select>
- 8 
-21 </mapper>

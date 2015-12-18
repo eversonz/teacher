@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.data.mapper.UsuarioMapper">
+
+	<resultMap type="com.teacher.common.vo.UsuarioVO" id="usuario">
+        <id column="id" property="id"  />
+        <result property="nome" column="name"/>   
+    </resultMap>
+    
+      <select id="login" resultMap="pessoa">
+          Select * from pessoa
+      </select>
+</mapper>
