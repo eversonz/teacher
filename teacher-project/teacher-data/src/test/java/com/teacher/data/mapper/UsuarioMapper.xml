@@ -1,9 +1,9 @@
- 1 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- 2 <mapper namespace="com.teacher.data.mapper.UsuarioMapper">
+<?xml version="1.0"?>
+ 2<mapper namespace="com.teacher.data.mapper.UsuarioMapper">
  3     <cache />
  4 
- 5     <select id="getAllUsers" resultType="User">
- 6         SELECT id, firstName, lastName, email FROM users
+ 5     <select id=login resultType="User">
+ 6         SELECT id, nome, login FROM usuario
  7     </select>
  8 
 21 </mapper>

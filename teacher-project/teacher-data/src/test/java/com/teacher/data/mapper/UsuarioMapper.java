@@ -6,9 +6,7 @@ import com.teacher.common.vo.UsuarioVO;
 
 @Service
 public interface UsuarioMapper {
-
+  
 	public UsuarioVO login(String user, String pass);
-	
-	
 	
 }
