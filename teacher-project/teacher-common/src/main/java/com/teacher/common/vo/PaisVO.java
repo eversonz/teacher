@@ -1,6 +1,6 @@
 package com.teacher.common.vo;
 
-public class Pais {
+public class PaisVO {
 
 	private long id;
 	private String nome;

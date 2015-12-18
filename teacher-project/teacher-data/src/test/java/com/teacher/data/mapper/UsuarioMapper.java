@@ -1,12 +1,13 @@
 package com.teacher.data.mapper;
 
-import java.util.List;
+import org.springframework.stereotype.Service;
 
-import com.teacher.common.vo.Usuario;
+import com.teacher.common.vo.UsuarioVO;
 
+@Service
 public interface UsuarioMapper {
 
-	public List<Usuario> getAllUsers();
+	public UsuarioVO login(String user, String pass);
 	
 	
 	

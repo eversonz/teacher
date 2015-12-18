@@ -2,13 +2,13 @@ package com.teacher.common.vo;
 
 import java.util.Date;
 
-public class Usuario {
+public class UsuarioVO {
 
 	private long id;
 	private String nome;
 	private String email;
 	private String senha;
-	private Pais pais; 
+	private PaisVO pais; 
 	private byte [] avatar;
 	private char nivel;
 	private Date dataCadastro;
@@ -38,10 +38,10 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public Pais getPais() {
+	public PaisVO getPais() {
 		return pais;
 	}
-	public void setPais(Pais pais) {
+	public void setPais(PaisVO pais) {
 		this.pais = pais;
 	}
 	public byte[] getAvatar() {
