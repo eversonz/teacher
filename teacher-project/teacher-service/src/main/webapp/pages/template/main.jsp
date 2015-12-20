@@ -10,12 +10,14 @@ DEBUG: <br>
 $ export MAVEN_OPTS="-Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,address=4000,server=y,suspend=n" <br>
 $ mvn tomcat:run
 
-<br/>1
-<br/>
 
-<a href="<c:url value='/pages/teacher/page.jsp' />">Name: ${pageContext.request.userPrincipal.name}</a>
+<br/>Name: ${pageContext.request.userPrincipal.name}
 <br/><br/>
 
+<a href="<c:url value='/pages/teacher/page.jsp' />">Test role Teacher</a> <br/>
+<a href="<c:url value='/pages/student/page.jsp' />">Test role Student</a> <br/>
+<a href="<c:url value='/web-testdatabase' />">Test database console</a> ${message}
+<br/><br/>
 
 <sec:authorize access="hasRole('ROLE_STUDENT')">
 	STUDENT_ROLE
@@ -24,7 +26,7 @@ $ mvn tomcat:run
 	TEACHER_ROLE
 </sec:authorize>
  	 
-<br/><br/> 
+<br/><br/>
 Validação na classe WebSecurityConfiguration.java e spring-secury.xml
 
 

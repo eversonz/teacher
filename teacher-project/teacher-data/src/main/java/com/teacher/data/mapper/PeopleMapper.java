@@ -1,12 +1,13 @@
 package com.teacher.data.mapper;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
-import com.teacher.common.vo.UsuarioVO;
+import com.teacher.common.vo.PeopleVO;
 
 @Service
-public interface UsuarioMapper {
+public interface PeopleMapper {
   
-	public UsuarioVO login(String user, String pass);
+	public PeopleVO login(@Param("email") String email, @Param("password") String password);
 	
 }

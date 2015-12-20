@@ -43,7 +43,7 @@
 	</context-param>
 
 	<error-page>
-		<error-code>404</error-code>
+		<error-code>401</error-code>
 		<location>/pages/public/login.jsp?error=401</location>
 	</error-page>		
 	<error-page>

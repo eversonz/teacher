@@ -3,22 +3,19 @@ package com.teacher.service.bo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.teacher.common.vo.UsuarioVO;
+import com.teacher.common.vo.PeopleVO;
 import com.teacher.data.mapper.*;
 
 
 @Service
-public class UsuarioBO {
+public class PeopleBO {
 	
 	@Autowired
-	Teste teste;
-	@Autowired
-	UsuarioMapper usuarioMapper;
+	PeopleMapper usuarioMapper;
 	
-	public UsuarioVO login(String user, String pass) {
+	public PeopleVO login(PeopleVO peopleVO) {
 		
-		teste.teste();
-		usuarioMapper.login(user, pass);
+		usuarioMapper.login(peopleVO.getEmail(), peopleVO.getPassword());
 		
 		return null;
 	}

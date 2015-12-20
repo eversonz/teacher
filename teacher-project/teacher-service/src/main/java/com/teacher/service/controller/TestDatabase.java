@@ -3,27 +3,27 @@ package com.teacher.service.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.teacher.service.bo.UsuarioBO;
+import com.teacher.common.vo.PeopleVO;
+import com.teacher.service.bo.PeopleBO;
 
 @Controller
-public class TestController {
+public class TestDatabase extends BaseController {
 
 	@Autowired
-	UsuarioBO usuarioBO;
+	PeopleBO usuarioBO;
 	
-	String message = "Welcome to Spring MVC!";
-	 
-	@RequestMapping("/spring-web")
-	public ModelAndView showMessage(
-			@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
-		System.out.println(message);
+	String message = "Passou no SQL - Spring MVC";
+	
+	@RequestMapping("/web-testdatabase")
+	public ModelAndView showMessage() {
 		
-		usuarioBO.login("", "");
+		log.info(message);	
+		
+		usuarioBO.login(new PeopleVO());
  
-		ModelAndView mv = new ModelAndView("spring");
+		ModelAndView mv = new ModelAndView("/template/main");
 		mv.addObject("message", message);
 		return mv;
 	}	

@@ -1,28 +1,21 @@
 package com.teacher.common.vo;
 
-public class PaisVO {
+public class CountryVO {
 
-	private long id;
-	private String nome;
-	private String sigla;
-	
-	public long getId() {
-		return id;
+	private String initials; // Sigla
+	private String name;
+
+	public String getName() {
+		return name;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getNome() {
-		return nome;
+	public String getInitials() {
+		return initials;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getSigla() {
-		return sigla;
-	}
-	public void setSigla(String sigla) {
-		this.sigla = sigla;
+	public void setInitials(String initials) {
+		this.initials = initials;
 	}
 	
 }

@@ -6,8 +6,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-Error: ${param.error} <br/><br/>
+<c:if test="${param.error != null}" ><b>Error: ${param.error}</b></c:if>
+ <br/><br/>
 
 	<form name='loginForm' action="<c:url value='/login' />" method='POST'>
 	 user:teacher - pass:teacher  <br/> 

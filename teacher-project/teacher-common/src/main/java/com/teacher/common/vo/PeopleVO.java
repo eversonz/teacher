@@ -2,17 +2,17 @@ package com.teacher.common.vo;
 
 import java.util.Date;
 
-public class UsuarioVO {
+public class PeopleVO {
 
 	private long id;
-	private String nome;
+	private String country;
+	private String role; // Nivel de acesso / Role
+	private String name;
 	private String email;
-	private String senha;
-	private PaisVO pais; 
+	private String password;
 	private byte [] avatar;
-	private char nivel;
-	private Date dataCadastro;
-	private Date ultimoAcesso;
+	private Date register;
+	private Date lastAccess;
 	
 	public long getId() {
 		return id;
@@ -20,11 +20,11 @@ public class UsuarioVO {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getEmail() {
 		return email;
@@ -32,17 +32,17 @@ public class UsuarioVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getSenha() {
-		return senha;
+	public String getPassword() {
+		return password;
 	}
-	public void setSenha(String senha) {
-		this.senha = senha;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public PaisVO getPais() {
-		return pais;
+	public String getCountry() {
+		return country;
 	}
-	public void setPais(PaisVO pais) {
-		this.pais = pais;
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	public byte[] getAvatar() {
 		return avatar;
@@ -50,23 +50,23 @@ public class UsuarioVO {
 	public void setAvatar(byte[] avatar) {
 		this.avatar = avatar;
 	}
-	public char getNivel() {
-		return nivel;
+	public Date getRegister() {
+		return register;
 	}
-	public void setNivel(char nivel) {
-		this.nivel = nivel;
+	public void setRegister(Date register) {
+		this.register = register;
 	}
-	public Date getDataCadastro() {
-		return dataCadastro;
+	public Date getLastAccess() {
+		return lastAccess;
 	}
-	public void setDataCadastro(Date dataCadastro) {
-		this.dataCadastro = dataCadastro;
+	public void setLastAccess(Date lastAccess) {
+		this.lastAccess = lastAccess;
 	}
-	public Date getUltimoAcesso() {
-		return ultimoAcesso;
+	public String getRole() {
+		return role;
 	}
-	public void setUltimoAcesso(Date ultimoAcesso) {
-		this.ultimoAcesso = ultimoAcesso;
+	public void setRole(String role) {
+		this.role = role;
 	}
-	
+
 }
