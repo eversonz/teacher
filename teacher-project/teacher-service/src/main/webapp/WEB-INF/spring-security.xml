@@ -19,7 +19,8 @@
 	    			default-target-url="/pages/template/main.jsp"
 	                authentication-failure-url="/pages/public/login.jsp?error=401" 
 	                 />
-    	<csrf />
+	                 
+    	<csrf disabled="true"/>
     	<logout logout-url="/logout" invalidate-session="true" delete-cookies="true"/>	
 	</http>  
 	

@@ -19,7 +19,7 @@ public class TestDatabase extends BaseController {
 	@RequestMapping("/web-testdatabase")
 	public ModelAndView showMessage() {
 		
-		log.info(message);	
+		log.info(message);
 		
 		usuarioBO.login(new PeopleVO());
  
