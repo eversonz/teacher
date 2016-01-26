@@ -5,15 +5,15 @@ import java.util.Date;
 public class PeopleVO {
 
 	private long id;
+	private CountryVO country;
+	private RoleVO role; // Nivel de acesso / Role
 	private LanguageVO language; // lingua nativa
-	private String country;
-	private String role; // Nivel de acesso / Role
 	private String name;
 	private String email;
 	private String password;
 	private byte [] avatar;
 	private Date register;
-	private Date lastAccess;
+	private Date access;
 	
 	public LanguageVO getLanguage() {
 		return language;
@@ -28,17 +28,12 @@ public class PeopleVO {
 	public void setId(long id) {
 		this.id = id;
 	}
-	public String getCountry() {
+
+	public CountryVO getCountry() {
 		return country;
 	}
-	public void setCountry(String country) {
+	public void setCountry(CountryVO country) {
 		this.country = country;
-	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
 	}
 	public String getName() {
 		return name;
@@ -70,12 +65,17 @@ public class PeopleVO {
 	public void setRegister(Date register) {
 		this.register = register;
 	}
-	public Date getLastAccess() {
-		return lastAccess;
+	public Date getAccess() {
+		return access;
 	}
-	public void setLastAccess(Date lastAccess) {
-		this.lastAccess = lastAccess;
+	public void setAccess(Date access) {
+		this.access = access;
 	}
-	
+	public RoleVO getRole() {
+		return role;
+	}
+	public void setRole(RoleVO role) {
+		this.role = role;
+	}
 	
 }

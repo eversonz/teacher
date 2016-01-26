@@ -1,19 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
 <mapper namespace="com.teacher.data.mapper.PeopleMapper">
 
-	<resultMap type="com.teacher.common.vo.PeopleVO" id="people">
+	<resultMap id="people" type="com.teacher.common.vo.PeopleVO" >
         <id column="id" property="id"  />
-        <result property="country" column="id_country"/>
-        <result property="role" column="id_role"/>
+              
         <result property="name" column="name"/>
         <result property="email" column="email"/>
         <result property="password" column="password"/>
         <result property="avatar" column="avatar"/>
         <result property="register" column="register"/>
-        <result property="lastAccess" column="lastAccess"/>
+        <result property="access" column="access"/>
+
+        <association property="country" column="id_country" 
+       		select="com.teacher.data.mapper.CountryVO.id"/>
+       	<association property="role" column="id_role" 
+       		select="com.teacher.data.mapper.RoleVO.id"/>	
+       	<association property="language" column="id_language" 
+       		select="com.teacher.data.mapper.LanguageVO.id"/>
+       
     </resultMap>
+    
+  
     
     <sql id="paramBasic">
     	select id, id_country, id_role, name, email, avatar from people

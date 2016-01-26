@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.data.mapper.LanguageMapper">
+
+	<resultMap type="com.teacher.common.vo.LanguageVO" id="language">
+        <id column="id" property="id"  />
+        <result property="name" column="name"/>
+    </resultMap>
+    
+</mapper>

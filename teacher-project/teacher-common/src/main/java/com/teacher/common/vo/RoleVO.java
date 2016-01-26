@@ -1,15 +1,15 @@
 package com.teacher.common.vo;
 
-public class LanguageVO {
+public class RoleVO {
 
-	private int id;
+	private String initials;
 	private String name;
 	
-	public int getId() {
-		return id;
+	public String getInitials() {
+		return initials;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setInitials(String initials) {
+		this.initials = initials;
 	}
 	public String getName() {
 		return name;
