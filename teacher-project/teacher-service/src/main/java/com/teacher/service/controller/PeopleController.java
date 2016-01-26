@@ -15,11 +15,9 @@ import com.teacher.service.config.ReturnRest;
 public class PeopleController extends BaseController{
 	
 	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
-	public ReturnRest add(@RequestBody PeopleVO people) {
-
+	public ReturnRest create(@RequestBody PeopleVO people) {
 		
-		
-		log.info("rest novo..." + people);
+		log.info("rest novo..." + people.getName());
 		return new ReturnRest("...");
 	}
 	
@@ -36,4 +34,13 @@ public class PeopleController extends BaseController{
 		log.info("rest buscar...");
 		return new ReturnRest("...");
 	}
+	
+	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
+	public ReturnRest edit(@RequestBody PeopleVO people) {
+		
+		log.info("rest alterar..." + people.getId());
+		return new ReturnRest("...");
+	}
+	
+	
 }

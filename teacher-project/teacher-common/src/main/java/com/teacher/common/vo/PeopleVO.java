@@ -5,6 +5,7 @@ import java.util.Date;
 public class PeopleVO {
 
 	private long id;
+	private LanguageVO language; // lingua nativa
 	private String country;
 	private String role; // Nivel de acesso / Role
 	private String name;
@@ -13,6 +14,13 @@ public class PeopleVO {
 	private byte [] avatar;
 	private Date register;
 	private Date lastAccess;
+	
+	public LanguageVO getLanguage() {
+		return language;
+	}
+	public void setLanguage(LanguageVO language) {
+		this.language = language;
+	}
 	
 	public long getId() {
 		return id;
