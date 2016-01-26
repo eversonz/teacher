@@ -1,9 +1,6 @@
 package com.teacher.service.controller;
 
-import java.util.Map;
-
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +19,7 @@ public class PeopleController extends BaseController{
 
 		
 		
-		log.info("rest novo..." + people.getId());
+		log.info("rest novo..." + people);
 		return new ReturnRest("...");
 	}
 	
