@@ -14,8 +14,8 @@ public interface PeopleMapper {
 	
 	public PeopleVO insert(PeopleVO people);
 	
-	public void delete(@Param("id") String id);
+	public void delete(@Param("id") long id);
 	
-	public PeopleVO select(@Param("id") String id);
+	public PeopleVO select(@Param("id") long id);
 	
 }

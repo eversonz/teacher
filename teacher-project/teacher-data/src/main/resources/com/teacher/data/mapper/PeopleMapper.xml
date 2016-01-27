@@ -15,22 +15,50 @@
         <result property="access" column="access"/>
 
         <association property="country" column="id_country" 
-       		select="com.teacher.data.mapper.CountryVO.id"/>
+       		select="com.teacher.data.mapper.CountryVO.selectByid"/>
        	<association property="role" column="id_role" 
-       		select="com.teacher.data.mapper.RoleVO.id"/>	
+       		select="com.teacher.data.mapper.RoleVO.selectByid"/>	
        	<association property="language" column="id_language" 
-       		select="com.teacher.data.mapper.LanguageVO.id"/>
+       		select="com.teacher.data.mapper.LanguageVO.selectByid"/>
        
     </resultMap>
     
-  
+  	<insert id="insert" parameterType="com.teacher.common.vo.PeopleVO">
+		INSERT INTO people
+			(id, name, email, password, avatar, register, access, id_country, id_role, id_language)
+   		VALUES 
+   			(#{id}, #{name}, #{email}, #{password}, #{avatar}, #{register}, #{access}, #{country.id}, #{role.id}, #{language.id});
+	</insert>
+	
+	<insert id="update" parameterType="com.teacher.common.vo.PeopleVO">
+		UPDATE 
+			people
+		SET    		 
+   			(name=#{name}, email=#{email}, password=#{password}, avatar=#{avatar}, register=#{register}, access=#{access}
+   			, id_country={#country.id}, id_role=#{role.id}, id_language=#{language.id})
+   		WHERE id=#{id};
+	</insert>
+	
+	<insert id="delete" parameterType="com.teacher.common.vo.PeopleVO">
+		DELETE FROM people WHERE id = #{id}
+	</insert>
     
-    <sql id="paramBasic">
-    	select id, id_country, id_role, name, email, avatar from people
+    <sql id="paramAll">
+    	select id, name, email, avatar, register, access, id_country, id_role, id_language from people
     </sql>
     
+    <select id="select" resultMap="people">
+   		<include refid="paramAll" />
+   		where id = #{id}
+    </select>
+    
+    <select id="selectById" resultMap="people">
+   		<include refid="paramAll" />
+   		where id = #{id}
+    </select>
+    
     <select id="login" resultMap="people">
-   		<include refid="paramBasic" />
-   		where id = #{email} and password = #{password}
+   		<include refid="paramAll" />
+   		where email = #{email} and password = #{password}
     </select>
 </mapper>
