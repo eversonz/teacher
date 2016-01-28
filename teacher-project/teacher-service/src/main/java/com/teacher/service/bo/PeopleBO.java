@@ -1,5 +1,7 @@
 package com.teacher.service.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,19 +20,34 @@ public class PeopleBO {
 	}
 	
 	public PeopleVO insertPeople(PeopleVO peopleVO) {
-		return usuarioMapper.insert(peopleVO);
+		usuarioMapper.insert(peopleVO);
+		return null;
 	}
 	
-	public PeopleVO updatePeople(PeopleVO peopleVO) {	
-		return usuarioMapper.update(peopleVO);
+	/**
+	 * No password update. Looking for updatePassword
+	 */
+	public PeopleVO updatePeople(Long id, PeopleVO peopleVO) {	
+		peopleVO.setId(id);
+		usuarioMapper.update(peopleVO);
+		return null;
+	}
+
+	public PeopleVO updatePassword(Long id, PeopleVO peopleVO) {
+		usuarioMapper.updatePassword(id, peopleVO.getEmail(), peopleVO.getPassword());
+		return null;
 	}
 	
 	public void deletePeople(long id) {
 		usuarioMapper.delete(id);
 	}
+
+	public PeopleVO selectPeople(long id) {
+		return usuarioMapper.selectById(id);
+	}
 	
-	public PeopleVO selectPeople(long id, String name, String email, String role, String language, String country) {
-		return usuarioMapper.select(id);
+	public List<PeopleVO> selectPeople(String name, String email, Long role, Long language, Long country) {
+		return usuarioMapper.select(name, email, role, language, country);
 	}
 	 
 }

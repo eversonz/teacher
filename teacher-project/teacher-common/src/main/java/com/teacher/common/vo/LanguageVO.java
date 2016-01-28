@@ -2,13 +2,14 @@ package com.teacher.common.vo;
 
 public class LanguageVO {
 
-	private int id;
+	private Long id;
+	private String initials;
 	private String name;
 	
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -16,6 +17,12 @@ public class LanguageVO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getInitials() {
+		return initials;
+	}
+	public void setInitials(String initials) {
+		this.initials = initials;
 	}
 	
 }

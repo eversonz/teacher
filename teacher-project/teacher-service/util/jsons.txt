@@ -1,0 +1,42 @@
+---------- People
+
+POST - http://localhost:8080/teacher-service/people
+{
+	"id":1,
+	"country":{"id":1},
+	"role":{"id":1},
+	"language":{"id":1},
+	"name":"Paulo Silva",
+	"email":"ps@uol.com",
+	"password":"123456"
+}
+	
+PUT - http://localhost:8080/teacher-service/people/{ID}
+{
+	"country":{"id":1},
+	"role":{"id":1},
+	"language":{"id":1},
+	"name":"Paulo Silva"
+}	
+
+PUT - http://localhost:8080/teacher-service/people/{ID}/access
+{
+	"email":"zzz@zzz.com",
+	"password":"123456"
+}
+
+GET - http://localhost:8080/teacher-service/people/{ID}
+
+GET - http://localhost:8080/teacher-service/people?name={name}&email={email}&role={role}&language={language}&country={country}
+
+DELETE - http://localhost:8080/teacher-service/people/{ID}
+
+
+---------- Common
+
+GET - http://localhost:8080/teacher-service/country
+
+GET - http://localhost:8080/teacher-service/language
+
+GET - http://localhost:8080/teacher-service/role
+

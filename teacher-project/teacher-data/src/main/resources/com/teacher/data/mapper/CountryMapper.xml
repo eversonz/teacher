@@ -11,12 +11,17 @@
     
     
     <sql id="paramAll">
-    	select id, initials, name
+    	select id, initials, name from country
     </sql>
     
-    <select id="select" resultMap="country">
+    <select id="selectAll" resultMap="country">
+   		<include refid="paramAll" />
+    </select>
+    
+    <select id="selectById" resultMap="country">
    		<include refid="paramAll" />
    		where id = #{id}
     </select>
+    
     
 </mapper>

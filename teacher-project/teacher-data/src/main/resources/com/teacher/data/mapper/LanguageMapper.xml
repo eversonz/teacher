@@ -8,4 +8,17 @@
         <result property="name" column="name"/>
     </resultMap>
     
+    <sql id="paramAll">
+    	select id, initials, name from language
+    </sql>
+
+    <select id="selectAll" resultMap="language">
+   		<include refid="paramAll" />
+    </select>
+    
+    <select id="selectById" resultMap="language">
+   		<include refid="paramAll" />
+   		where id = #{id}
+    </select>
+    
 </mapper>

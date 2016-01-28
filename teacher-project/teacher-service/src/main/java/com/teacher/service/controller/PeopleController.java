@@ -1,5 +1,7 @@
 package com.teacher.service.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,54 +22,57 @@ public class PeopleController extends BaseController{
 	@Autowired
 	PeopleBO peopleBO;
 	
-	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.MULTIPART_FORM_DATA_VALUE)
+	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest create(@RequestBody PeopleVO people) {
 		
 		peopleBO.insertPeople(people);
 		
-		log.info("rest novo..." + people.getName());
-		return new ReturnRest("...");
+		return returnRest();
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
-	public ReturnRest update(@RequestBody PeopleVO people) {
+	@RequestMapping(method=RequestMethod.PUT, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ReturnRest update(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
 		
-		peopleBO.updatePeople(people);
+		peopleBO.updatePeople(id,people);
 		
-		log.info("rest alterar..." + people.getId());
-		return new ReturnRest("...");
+		return returnRest();
+	}
+
+	@RequestMapping(method=RequestMethod.PUT, value="/{id}/access", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ReturnRest updatePassword(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
+		
+		peopleBO.updatePassword(id, people);
+		
+		return returnRest();
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/{id}")
-	public ReturnRest delete(@PathVariable("id") long id) {
+	@RequestMapping(method=RequestMethod.DELETE, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
+	public ReturnRest delete(@PathVariable("id") Long id) {
 		
 		peopleBO.deletePeople(id);
 		
-		log.info("rest excluir...");
-		return new ReturnRest("...");
+		return returnRest();
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/{id}")
+	@RequestMapping(method=RequestMethod.GET, value="/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest get(@PathVariable("id") int id) {
 		
-		PeopleVO people = peopleBO.selectPeople(id, null, null, null, null, null );
+		PeopleVO people = peopleBO.selectPeople(id);
 		
-		log.info("rest buscar...");
-		return new ReturnRest("...");
+		return returnRest(people);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET)
+	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest select(@RequestParam(value="name", required=false) String name,
 			@RequestParam(value="email", required=false) String email,
-			@RequestParam(value="role", required=false) String role,
-			@RequestParam(value="language", required=false) String language,
-			@RequestParam(value="country", required=false) String country
+			@RequestParam(value="role", required=false) Long role,
+			@RequestParam(value="language", required=false) Long language,
+			@RequestParam(value="country", required=false) Long country
 			) {
 
-		PeopleVO people = peopleBO.selectPeople(0, name, email, role, language, country);
+		List<PeopleVO> pList = peopleBO.selectPeople(name, email, role, language, country);
 		
-		log.info("rest select... email: " + email);
-		return new ReturnRest("...");
+		return returnRest(pList);
 	}
 
 }

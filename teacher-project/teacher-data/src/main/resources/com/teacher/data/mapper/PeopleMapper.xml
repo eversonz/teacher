@@ -15,11 +15,11 @@
         <result property="access" column="access"/>
 
         <association property="country" column="id_country" 
-       		select="com.teacher.data.mapper.CountryVO.selectByid"/>
+       		select="com.teacher.data.mapper.CountryMapper.selectById"/>
        	<association property="role" column="id_role" 
-       		select="com.teacher.data.mapper.RoleVO.selectByid"/>	
+       		select="com.teacher.data.mapper.RoleMapper.selectById"/>	
        	<association property="language" column="id_language" 
-       		select="com.teacher.data.mapper.LanguageVO.selectByid"/>
+       		select="com.teacher.data.mapper.LanguageMapper.selectById"/>
        
     </resultMap>
     
@@ -34,10 +34,18 @@
 		UPDATE 
 			people
 		SET    		 
-   			(name=#{name}, email=#{email}, password=#{password}, avatar=#{avatar}, register=#{register}, access=#{access}
-   			, id_country={#country.id}, id_role=#{role.id}, id_language=#{language.id})
+   			name=#{name}, avatar=#{avatar}, register=#{register}, access=#{access}
+   			,id_country=#{country.id}, id_role=#{role.id}, id_language=#{language.id}
    		WHERE id=#{id};
 	</insert>
+	
+	<insert id="updatePassword" parameterType="com.teacher.common.vo.PeopleVO">
+		UPDATE 
+			people
+		SET    		 
+   			email=#{email}, password=#{password}
+   		WHERE id=#{id};
+	</insert>	
 	
 	<insert id="delete" parameterType="com.teacher.common.vo.PeopleVO">
 		DELETE FROM people WHERE id = #{id}
@@ -49,7 +57,12 @@
     
     <select id="select" resultMap="people">
    		<include refid="paramAll" />
-   		where id = #{id}
+   		where 
+   			name = #{name}
+   			AND email = #{email}
+   			AND id_role = #{role}
+   			AND id_language = #{language}
+   			AND id_country = #{country}
     </select>
     
     <select id="selectById" resultMap="people">

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class WebSecurityConfiguration implements AuthenticationProvider {
 
+	@SuppressWarnings("unused")
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		
 		String name = authentication.getName();

@@ -9,4 +9,17 @@
         <result property="name" column="name"/>
     </resultMap>
     
+    <sql id="paramAll">
+    	select id, initials, name from role
+    </sql>
+    
+    <select id="selectAll" resultMap="role">
+   		<include refid="paramAll" />
+    </select>    
+    
+    <select id="selectById" resultMap="role">
+   		<include refid="paramAll" />
+   		where id = #{id}
+    </select>
+    
 </mapper>

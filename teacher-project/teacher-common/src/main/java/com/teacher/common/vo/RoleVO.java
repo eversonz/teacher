@@ -2,9 +2,16 @@ package com.teacher.common.vo;
 
 public class RoleVO {
 
+	private Long id;
 	private String initials;
 	private String name;
 	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getInitials() {
 		return initials;
 	}
