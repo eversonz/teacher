@@ -2,19 +2,27 @@ package com.teacher.common.vo;
 
 public class CurriculumVO {
 
+	private PeopleVO people;
+	private AreaVO area;
 	private String uri;
 	private String state;
 	private String city;
 	private String contact;
-	private String area;
+	
 	private String search;
 	private String briefDescription;
 	private String description;
 	
-	public String getArea() {
+	public PeopleVO getPeople() {
+		return people;
+	}
+	public void setPeople(PeopleVO people) {
+		this.people = people;
+	}
+	public AreaVO getArea() {
 		return area;
 	}
-	public void setArea(String area) {
+	public void setArea(AreaVO area) {
 		this.area = area;
 	}
 	public String getUri() {

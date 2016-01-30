@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.data.mapper.CurriculumMapper">
+
+	<resultMap type="com.teacher.common.vo.CurriculumVO" id="curriculum">
+        <id column="id_people" property="people.id"  />
+        <result column="id_area" property="area.id" />
+        <result column="uri" property="uri" />
+        <result property="state" column="state"/>
+        <result property="city" column="city"/>
+        <result property="contact" column="contact"/>
+        <result property="search" column="search"/>
+        <result property="brief_description" column="brief_description"/>
+        <result property="description" column="description"/>  
+    </resultMap>
+    
+    <sql id="paramAll">
+    	SELECT id_people, id_area, uri, state, city, contact, search
+    	, brief_description, description 
+    	FROM curriculum
+    </sql>
+    
+    <select id="selectAll" resultMap="curriculum">
+   		SELECT name, avatar, uri id_country, state, brief_description 
+		FROM 
+		  curriculum
+    </select>
+    
+    <select id="selectByMonitor" resultMap="curriculum">
+		    SELECT name, avatar, uri id_country, state, brief_description 
+		FROM 
+		  curriculum cu JOIN people pe on pe.id = cu.id_people
+		WHERE 
+		  true = true
+		  <if test="role != null"> 
+		  	AND pe.id_role = #{role}
+		  </if>
+		  <if test="area != null"> 
+		  	AND cu.id_area = #{area}
+		  </if>
+		  <if test="state != null"> 
+		  	AND LOWER(cu.state) like LOWER('%' || #{state} || '%') 
+		  </if>
+		  <if test="search != null">
+		  	AND LOWER(cu.search) like LOWER('%' || #{search} || '%') 
+		  </if>
+		  <if test="country != null"> 
+		  	AND pe.id_country = #{country}
+		  </if>
+    </select>
+    
+    <select id="selectById" resultMap="curriculum">
+   		<include refid="paramAll" />
+   		where id_people = #{idPeople}
+    </select>
+    
+    
+</mapper>
