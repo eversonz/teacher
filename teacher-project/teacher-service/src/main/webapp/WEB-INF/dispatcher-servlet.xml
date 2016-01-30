@@ -28,14 +28,14 @@
     </bean>
     
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-    <property name="messageConverters">
-        <list>
-            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
-            <property name="prefixJson" value="false"/>
-        	<property name="supportedMediaTypes" value="application/json"/>
-        	</bean>
-        </list>
-    </property>
+	    <property name="messageConverters">
+	        <list>
+	            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" >
+		            <property name="prefixJson" value="false"/>
+		        	<property name="supportedMediaTypes" value="application/json"/>
+	        	</bean>
+	        </list>
+	    </property>
 	</bean>
 	
  	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

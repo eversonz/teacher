@@ -14,6 +14,7 @@ public class PeopleVO {
 	private byte [] avatar;
 	private Date register;
 	private Date access;
+	private CurriculumVO curriculumVO;
 	
 	public LanguageVO getLanguage() {
 		return language;
@@ -76,6 +77,12 @@ public class PeopleVO {
 	}
 	public void setRole(RoleVO role) {
 		this.role = role;
+	}
+	public CurriculumVO getCurriculumVO() {
+		return curriculumVO;
+	}
+	public void setCurriculumVO(CurriculumVO curriculumVO) {
+		this.curriculumVO = curriculumVO;
 	}
 	
 }

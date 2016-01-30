@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.teacher.common.vo.PeopleVO;
@@ -22,6 +23,7 @@ public class PeopleController extends BaseController{
 	@Autowired
 	PeopleBO peopleBO;
 	
+	@ResponseBody
 	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest create(@RequestBody PeopleVO people) {
 		
@@ -30,6 +32,7 @@ public class PeopleController extends BaseController{
 		return returnRest();
 	}
 	
+	@ResponseBody
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest update(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
 		
@@ -38,6 +41,7 @@ public class PeopleController extends BaseController{
 		return returnRest();
 	}
 
+	@ResponseBody
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}/access", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest updatePassword(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
 		
@@ -45,7 +49,7 @@ public class PeopleController extends BaseController{
 		
 		return returnRest();
 	}
-	
+	@ResponseBody
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest delete(@PathVariable("id") Long id) {
 		
@@ -54,7 +58,8 @@ public class PeopleController extends BaseController{
 		return returnRest();
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/{id}", produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	@RequestMapping(method=RequestMethod.GET, value="/{id}")
 	public ReturnRest get(@PathVariable("id") int id) {
 		
 		PeopleVO people = peopleBO.selectPeople(id);
@@ -62,7 +67,8 @@ public class PeopleController extends BaseController{
 		return returnRest(people);
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	@RequestMapping(method=RequestMethod.GET)
 	public ReturnRest select(@RequestParam(value="name", required=false) String name,
 			@RequestParam(value="email", required=false) String email,
 			@RequestParam(value="role", required=false) Long role,
