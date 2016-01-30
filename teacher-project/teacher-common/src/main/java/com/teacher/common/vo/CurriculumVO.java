@@ -6,10 +6,17 @@ public class CurriculumVO {
 	private String state;
 	private String city;
 	private String contact;
+	private String area;
 	private String search;
 	private String briefDescription;
 	private String description;
 	
+	public String getArea() {
+		return area;
+	}
+	public void setArea(String area) {
+		this.area = area;
+	}
 	public String getUri() {
 		return uri;
 	}
