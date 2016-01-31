@@ -12,71 +12,67 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.teacher.common.vo.PeopleVO;
-import com.teacher.service.bo.PeopleBO;
+import com.teacher.common.vo.CurriculumVO;
+import com.teacher.service.bo.CurriculumBO;
 import com.teacher.service.config.ReturnRest;
 
 @RestController
-@RequestMapping("/people")
-public class PeopleController extends RestBaseController{
+@RequestMapping("/curriculum")
+public class CurriculumController extends RestBaseController{
 	
 	@Autowired
-	PeopleBO peopleBO;
+	CurriculumBO curriculumBO;
 	
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.POST, consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ReturnRest create(@RequestBody PeopleVO people) {
+	public ReturnRest create(@RequestBody CurriculumVO curriculum) {
 		
-		peopleBO.insertPeople(people);
-		
+		curriculumBO.insertCurriculum(curriculum);
 		return returnRest();
 	}
 	
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ReturnRest update(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
+	public ReturnRest update(@PathVariable("id") Long id, @RequestBody CurriculumVO curriculum) {
 		
-		peopleBO.updatePeople(id,people);
-		
+		curriculumBO.updateCurriculum(id,curriculum);
 		return returnRest();
 	}
 
 	@ResponseBody
-	@RequestMapping(method=RequestMethod.PUT, value="/{id}/access", consumes=MediaType.APPLICATION_JSON_VALUE)
-	public ReturnRest updatePassword(@PathVariable("id") Long id, @RequestBody PeopleVO people) {
-		
-		peopleBO.updatePassword(id, people);
-		
-		return returnRest();
-	}
-	@ResponseBody
 	@RequestMapping(method=RequestMethod.DELETE, value="/{id}", consumes=MediaType.APPLICATION_JSON_VALUE)
 	public ReturnRest delete(@PathVariable("id") Long id) {
 		
-		peopleBO.deletePeople(id);
-		
+		curriculumBO.deleteCurriculum(id);
 		return returnRest();
 	}
 	
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.GET, value="/{id}")
-	public ReturnRest get(@PathVariable("id") int id) {
+	public ReturnRest get(@PathVariable("id") Long id) {
 		
-		PeopleVO people = peopleBO.selectPeople(id);
+		CurriculumVO curriculum = curriculumBO.selectById(id);
+		return returnRest(curriculum);
+	}
+
+	@ResponseBody
+	@RequestMapping(method=RequestMethod.GET, value="/uri/{uri}")
+	public ReturnRest get(@PathVariable("uri") String uri) {
 		
-		return returnRest(people);
+		CurriculumVO curriculum = curriculumBO.selectByUri(uri);
+		return returnRest(curriculum);
 	}
 	
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.GET)
-	public ReturnRest select(@RequestParam(value="name", required=false) String name,
-			@RequestParam(value="email", required=false) String email,
-			@RequestParam(value="role", required=false) Long role,
-			@RequestParam(value="language", required=false) Long language,
+	public ReturnRest select(@RequestParam(value="role", required=false) Long role,
+			@RequestParam(value="area", required=false) Long area,
+			@RequestParam(value="state", required=false) String state,
+			@RequestParam(value="search", required=false) String search,
 			@RequestParam(value="country", required=false) Long country
 			) {
 
-		List<PeopleVO> pList = peopleBO.selectPeople(name, email, role, language, country);
+		List<CurriculumVO> pList = curriculumBO.selectByMonitor(role, area, state, search, country);
 		
 		return returnRest(pList);
 	}

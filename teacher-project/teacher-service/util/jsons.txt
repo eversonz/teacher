@@ -40,3 +40,10 @@ GET - http://localhost:8080/teacher-service/language
 
 GET - http://localhost:8080/teacher-service/role
 
+---------- Curriculum
+
+GET - http://localhost:8080/teacher-service/curriculum/{idpeople}
+
+GET - http://localhost:8080/teacher-service/curriculum/uri/{uri}
+
+GET - http://localhost:8080/teacher-service/curriculum?role=1&area=1&state=SP&search=i&country=1

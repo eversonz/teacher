@@ -11,7 +11,7 @@ import com.teacher.service.config.ReturnRest;
 
 @RestController
 @RequestMapping
-public class CommonController extends BaseController{
+public class CommonController extends RestBaseController{
 	
 	@Autowired
 	private CommonBO commonBO;

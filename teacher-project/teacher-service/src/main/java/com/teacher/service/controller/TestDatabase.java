@@ -9,7 +9,7 @@ import com.teacher.common.vo.PeopleVO;
 import com.teacher.service.bo.PeopleBO;
 
 @Controller
-public class TestDatabase extends BaseController {
+public class TestDatabase extends RestBaseController {
 
 	@Autowired
 	PeopleBO usuarioBO;

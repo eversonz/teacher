@@ -11,9 +11,29 @@
         <result property="city" column="city"/>
         <result property="contact" column="contact"/>
         <result property="search" column="search"/>
-        <result property="brief_description" column="brief_description"/>
+        <result property="brief_description" column="briefDescription"/>
         <result property="description" column="description"/>  
     </resultMap>
+    
+    <insert id="insert" parameterType="com.teacher.common.vo.CurriculumVO">
+		INSERT INTO curriculum
+			(id_people, id_area, uri, state, city, contact, search, brief_description, description)
+   		VALUES 
+   			(#{people.id}, #{area.id}, #{uri}, #{state}, #{city}, #{contact}, #{search}, #{brief_description}, #{description});
+	</insert>
+	
+	<update id="update" parameterType="com.teacher.common.vo.CurriculumVO">
+		UPDATE 
+			curriculum
+		SET    		 
+   			id_area=#{area.id}, uri=#{uri}, state=#{state}, city=#{city}
+   			,contact=#{contact}, search=#{search}, brief_description=#{brief_description}, description=#{description}
+   		WHERE id_people=#{people.id};
+	</update>
+    
+    <delete id="curriculum" parameterType="com.teacher.common.vo.CurriculumVO">
+		DELETE FROM curriculum WHERE id_people = #{peopleId}
+	</delete>
     
     <sql id="paramAll">
     	SELECT id_people, id_area, uri, state, city, contact, search
@@ -22,13 +42,13 @@
     </sql>
     
     <select id="selectAll" resultMap="curriculum">
-   		SELECT name, avatar, uri id_country, state, brief_description 
+   		SELECT id_people, id_area, uri, state, city, contact, search, brief_description, description 
 		FROM 
 		  curriculum
     </select>
     
     <select id="selectByMonitor" resultMap="curriculum">
-		    SELECT name, avatar, uri id_country, state, brief_description 
+		    SELECT pe.name, pe.avatar, cu.uri, pe.id_country, cu.state, cu.brief_description 
 		FROM 
 		  curriculum cu JOIN people pe on pe.id = cu.id_people
 		WHERE 
@@ -49,10 +69,15 @@
 		  	AND pe.id_country = #{country}
 		  </if>
     </select>
+
+    <select id="selectByUri" resultMap="curriculum">
+   		<include refid="paramAll" />
+   		where uri = #{uri}
+    </select>
     
     <select id="selectById" resultMap="curriculum">
    		<include refid="paramAll" />
-   		where id_people = #{idPeople}
+   		where id_people = #{id}
     </select>
     
     
