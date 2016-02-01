@@ -20,7 +20,7 @@
        		select="com.teacher.data.mapper.RoleMapper.selectById"/>	
        	<association property="language" column="id_language" 
        		select="com.teacher.data.mapper.LanguageMapper.selectById"/>
-       
+
     </resultMap>
     
   	<insert id="insert" parameterType="com.teacher.common.vo.PeopleVO">

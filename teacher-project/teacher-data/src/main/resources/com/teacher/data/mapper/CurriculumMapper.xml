@@ -4,15 +4,22 @@
 <mapper namespace="com.teacher.data.mapper.CurriculumMapper">
 
 	<resultMap type="com.teacher.common.vo.CurriculumVO" id="curriculum">
-        <id column="id_people" property="people.id"  />
-        <result column="id_area" property="area.id" />
-        <result column="uri" property="uri" />
+        
+        <result property="uri" column="uri" />
         <result property="state" column="state"/>
         <result property="city" column="city"/>
         <result property="contact" column="contact"/>
         <result property="search" column="search"/>
-        <result property="brief_description" column="briefDescription"/>
-        <result property="description" column="description"/>  
+        <result property="briefDescription" column="brief_description"/>
+        <result property="description" column="description"/>
+        
+        <association property="area" column="id_area" 
+       		select="com.teacher.data.mapper.AreaMapper.selectById"/>
+       		
+        <association property="people" column="id_people"
+		             select="com.teacher.data.mapper.PeopleMapper.selectById">
+		             <id property="people.id" column="id_people" />
+		</association>             
     </resultMap>
     
     <insert id="insert" parameterType="com.teacher.common.vo.CurriculumVO">
@@ -48,7 +55,7 @@
     </select>
     
     <select id="selectByMonitor" resultMap="curriculum">
-		    SELECT pe.name, pe.avatar, cu.uri, pe.id_country, cu.state, cu.brief_description 
+		    SELECT pe.name, pe.avatar, pe.id_country, cu.uri, cu.state, cu.brief_description 
 		FROM 
 		  curriculum cu JOIN people pe on pe.id = cu.id_people
 		WHERE 

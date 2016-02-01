@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.data.mapper.AreaMapper">
+
+	<resultMap type="com.teacher.common.vo.AreaVO" id="area">
+        <id column="id" property="id"  />
+        <result column="initials" property="initials" />
+        <result property="name" column="name"/>
+    </resultMap>
+    
+    <sql id="paramAll">
+    	select id, initials, name from area
+    </sql>
+    
+    <select id="selectAll" resultMap="area">
+   		<include refid="paramAll" />
+    </select>    
+    
+    <select id="selectById" resultMap="area">
+   		<include refid="paramAll" />
+   		where id = #{id}
+    </select>
+    
+</mapper>
