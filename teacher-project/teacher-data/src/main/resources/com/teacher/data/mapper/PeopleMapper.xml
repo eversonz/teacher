@@ -20,7 +20,8 @@
        		select="com.teacher.data.mapper.RoleMapper.selectById"/>	
        	<association property="language" column="id_language" 
        		select="com.teacher.data.mapper.LanguageMapper.selectById"/>
-
+       	<association property="curriculum" column="id" 
+       		select="com.teacher.data.mapper.CurriculumMapper.selectById"/>       		
     </resultMap>
     
   	<insert id="insert" parameterType="com.teacher.common.vo.PeopleVO">
@@ -54,6 +55,29 @@
     <sql id="paramAll">
     	select id, name, email, avatar, register, access, id_country, id_role, id_language from people
     </sql>
+    
+    <select id="selectByMonitor" resultMap="people">
+		    SELECT pe.id, pe.name, pe.avatar, pe.id_country, cu.uri, cu.brief_description 
+		FROM 
+		  	curriculum cu JOIN people pe on pe.id = cu.id_people
+		WHERE 
+		  true = true
+		  <if test="role != null"> 
+		  	AND pe.id_role = #{role}
+		  </if>
+		  <if test="area != null"> 
+		  	AND cu.id_area = #{area}
+		  </if>
+		  <if test="state != null"> 
+		  	AND LOWER(cu.state) like LOWER('%' || #{state} || '%') 
+		  </if>
+		  <if test="search != null">
+		  	AND LOWER(cu.search) like LOWER('%' || #{search} || '%') 
+		  </if>
+		  <if test="country != null"> 
+		  	AND pe.id_country = #{country}
+		  </if>
+    </select>
     
     <select id="select" resultMap="people">
    		<include refid="paramAll" />

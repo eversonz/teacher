@@ -50,4 +50,7 @@ public class PeopleBO {
 		return usuarioMapper.select(name, email, role, language, country);
 	}
 	 
+	public List<PeopleVO> selectByMonitor(Long roleId, Long areaId, String state, String search, Long countryId) {
+		return usuarioMapper.selectByMonitor(roleId, areaId, state, search, countryId);
+	}	
 }

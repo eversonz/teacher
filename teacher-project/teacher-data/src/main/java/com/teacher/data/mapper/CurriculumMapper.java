@@ -16,10 +16,6 @@ public interface CurriculumMapper {
 	
 	public List<CurriculumVO> selectAll();
 	
-	public List<CurriculumVO> selectByMonitor(@Param("role") Long role,
-			@Param("area") Long area, @Param("state") String state,
-			@Param("search") String search, @Param("country") Long country);
-	
 	public void delete(@Param("peopleId") Long peopleId);
 	
 	public void insert(CurriculumVO curriculum);

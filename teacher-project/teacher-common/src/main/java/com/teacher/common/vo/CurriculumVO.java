@@ -2,7 +2,7 @@ package com.teacher.common.vo;
 
 public class CurriculumVO {
 
-	private PeopleVO people;
+	private Long id;
 	private AreaVO area;
 	private String uri;
 	private String state;
@@ -13,11 +13,11 @@ public class CurriculumVO {
 	private String briefDescription;
 	private String description;
 	
-	public PeopleVO getPeople() {
-		return people;
+	public Long getId() {
+		return id;
 	}
-	public void setPeople(PeopleVO people) {
-		this.people = people;
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public AreaVO getArea() {
 		return area;

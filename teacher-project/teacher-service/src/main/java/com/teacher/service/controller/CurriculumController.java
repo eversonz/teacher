@@ -1,14 +1,11 @@
 package com.teacher.service.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -61,20 +58,6 @@ public class CurriculumController extends RestBaseController{
 		
 		CurriculumVO curriculum = curriculumBO.selectByUri(uri);
 		return returnRest(curriculum);
-	}
-	
-	@ResponseBody
-	@RequestMapping(method=RequestMethod.GET)
-	public ReturnRest select(@RequestParam(value="role", required=false) Long role,
-			@RequestParam(value="area", required=false) Long area,
-			@RequestParam(value="state", required=false) String state,
-			@RequestParam(value="search", required=false) String search,
-			@RequestParam(value="country", required=false) Long country
-			) {
-
-		List<CurriculumVO> pList = curriculumBO.selectByMonitor(role, area, state, search, country);
-		
-		return returnRest(pList);
 	}
 
 }

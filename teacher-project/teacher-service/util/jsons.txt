@@ -31,6 +31,7 @@ GET - http://localhost:8080/teacher-service/people?name={name}&email={email}&rol
 
 DELETE - http://localhost:8080/teacher-service/people/{ID}
 
+http://localhost:8080/teacher-service/people/monitor?role=1&area=1&state=SP&search=i&country=1
 
 ---------- Common
 
@@ -41,9 +42,23 @@ GET - http://localhost:8080/teacher-service/language
 GET - http://localhost:8080/teacher-service/role
 
 ---------- Curriculum
+POST - http://localhost:8080/teacher-service/curriculum
+
+{
+  "id":1,
+  "area": {"id":1},
+  "uri": "tea_abc",
+  "state": "SP",
+  "city": "S. Paulo",
+  "contact": "Tel 123456 email: xxx@bol.com",
+  "search": "ingles",
+  "briefDescription": "professor de inglês",
+  "description": "professor de inglês... abc, abc"  
+}
+
+
 
 GET - http://localhost:8080/teacher-service/curriculum/{idpeople}
 
 GET - http://localhost:8080/teacher-service/curriculum/uri/{uri}
 
-GET - http://localhost:8080/teacher-service/curriculum?role=1&area=1&state=SP&search=i&country=1

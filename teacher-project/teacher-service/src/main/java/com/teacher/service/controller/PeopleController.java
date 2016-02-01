@@ -80,5 +80,19 @@ public class PeopleController extends RestBaseController{
 		
 		return returnRest(pList);
 	}
+	
+	@ResponseBody
+	@RequestMapping(method=RequestMethod.GET, value="/monitor")
+	public ReturnRest select(@RequestParam(value="role", required=false) Long role,
+			@RequestParam(value="area", required=false) Long area,
+			@RequestParam(value="state", required=false) String state,
+			@RequestParam(value="search", required=false) String search,
+			@RequestParam(value="country", required=false) Long country
+			) {
+
+		List<PeopleVO> pList = peopleBO.selectByMonitor(role, area, state, search, country);
+		
+		return returnRest(pList);
+	}
 
 }
