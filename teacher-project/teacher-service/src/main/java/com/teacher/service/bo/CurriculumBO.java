@@ -17,8 +17,8 @@ public class CurriculumBO {
 		curriculumMapper.insert(curriculum);
 	}
 	
-	public void updateCurriculum(Long peopleId, CurriculumVO curriculum) {
-		curriculum.setId(peopleId);
+	public void updateCurriculum(Long id, CurriculumVO curriculum) {
+		curriculum.setId(id);
 		curriculumMapper.update(curriculum);
 	}
 	

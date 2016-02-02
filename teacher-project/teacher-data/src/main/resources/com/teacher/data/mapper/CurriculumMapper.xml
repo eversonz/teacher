@@ -34,7 +34,7 @@
    		WHERE id_people=#{id};
 	</update>
     
-    <delete id="curriculum" parameterType="com.teacher.common.vo.CurriculumVO">
+    <delete id="delete" parameterType="com.teacher.common.vo.CurriculumVO">
 		DELETE FROM curriculum WHERE id_people = #{peopleId}
 	</delete>
     

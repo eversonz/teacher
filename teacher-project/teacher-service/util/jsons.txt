@@ -29,9 +29,9 @@ GET - http://localhost:8080/teacher-service/people/{ID}
 
 GET - http://localhost:8080/teacher-service/people?name={name}&email={email}&role={role}&language={language}&country={country}
 
-DELETE - http://localhost:8080/teacher-service/people/{ID}
+GET - http://localhost:8080/teacher-service/people/monitor?role=1&area=1&state=SP&search=i&country=1
 
-http://localhost:8080/teacher-service/people/monitor?role=1&area=1&state=SP&search=i&country=1
+DELETE - http://localhost:8080/teacher-service/people/{ID}
 
 ---------- Common
 
@@ -42,10 +42,11 @@ GET - http://localhost:8080/teacher-service/language
 GET - http://localhost:8080/teacher-service/role
 
 ---------- Curriculum
+
 POST - http://localhost:8080/teacher-service/curriculum
 
 {
-  "id":1,
+  "id":{idPeople},
   "area": {"id":1},
   "uri": "tea_abc",
   "state": "SP",
@@ -56,9 +57,22 @@ POST - http://localhost:8080/teacher-service/curriculum
   "description": "professor de inglês... abc, abc"  
 }
 
+PUT - http://localhost:8080/teacher-service/curriculum/{ID}
+
+{
+  "area": {id},
+  "uri": "___ABC",
+  "state": "MG",
+  "city": "UBERABA",
+  "contact": "Tel 999999 email: zzz@bol.com",
+  "search": "ingles",
+  "briefDescription": "professor de inglês",
+  "description": "professor de inglês... abc, abc"  
+}
 
 
-GET - http://localhost:8080/teacher-service/curriculum/{idpeople}
+GET - http://localhost:8080/teacher-service/curriculum/{ID}
 
-GET - http://localhost:8080/teacher-service/curriculum/uri/{uri}
+GET - http://localhost:8080/teacher-service/curriculum/uri/{URI}
 
+DELETE - http://localhost:8080/teacher-service/curriculum/{id}
