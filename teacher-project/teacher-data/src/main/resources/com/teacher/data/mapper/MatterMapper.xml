@@ -1,23 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.teacher.data.mapper.RoleMapper">
+<mapper namespace="com.teacher.data.mapper.MatterMapper">
 
-	<resultMap type="com.teacher.common.vo.RoleVO" id="role">
+	<resultMap type="com.teacher.common.vo.MatterVO" id="matter">
         <id column="id" property="id"  />
-        <result column="initials" property="initials" />
         <result property="name" column="name"/>
     </resultMap>
     
     <sql id="paramAll">
-    	select id, initials, name from te_role
+    	select id, initials, name from te_matter
     </sql>
-    
-    <select id="selectAll" resultMap="role">
+
+    <select id="selectAll" resultMap="matter">
    		<include refid="paramAll" />
-    </select>    
+    </select>
     
-    <select id="selectById" resultMap="role">
+    <select id="selectById" resultMap="matter">
    		<include refid="paramAll" />
    		where id = #{id}
     </select>

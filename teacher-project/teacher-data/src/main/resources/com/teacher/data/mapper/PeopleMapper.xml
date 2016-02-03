@@ -18,55 +18,53 @@
        		select="com.teacher.data.mapper.CountryMapper.selectById"/>
        	<association property="role" column="id_role" 
        		select="com.teacher.data.mapper.RoleMapper.selectById"/>	
-       	<association property="language" column="id_language" 
-       		select="com.teacher.data.mapper.LanguageMapper.selectById"/>
        	<association property="curriculum" column="id" 
        		select="com.teacher.data.mapper.CurriculumMapper.selectById"/>       		
     </resultMap>
     
   	<insert id="insert" parameterType="com.teacher.common.vo.PeopleVO">
-		INSERT INTO people
-			(id, name, email, password, avatar, register, access, id_country, id_role, id_language)
+		INSERT INTO te_people
+			(id, name, email, password, avatar, register, access, id_country, id_role, id_matter)
    		VALUES 
-   			(#{id}, #{name}, #{email}, #{password}, #{avatar}, #{register}, CURRENT_DATE, #{country.id}, #{role.id}, #{language.id});
+   			(#{id}, #{name}, #{email}, #{password}, #{avatar}, #{register}, CURRENT_DATE, #{country.id}, #{role.id});
 	</insert>
 	
 	<update id="update" parameterType="com.teacher.common.vo.PeopleVO">
 		UPDATE 
-			people
+			te_people
 		SET    		 
    			name=#{name}, avatar=#{avatar}, register=#{register}, access=#{access}
-   			,id_country=#{country.id}, id_role=#{role.id}, id_language=#{language.id}
+   			,id_country=#{country.id}, id_role=#{role.id}
    		WHERE id=#{id};
 	</update>
 	
 	<update id="updatePassword" parameterType="com.teacher.common.vo.PeopleVO">
 		UPDATE 
-			people
+			te_people
 		SET    		 
    			email=#{email}, password=#{password}
    		WHERE id=#{id};
 	</update>	
 	
 	<delete id="delete" parameterType="com.teacher.common.vo.PeopleVO">
-		DELETE FROM people WHERE id = #{id}
+		DELETE FROM te_people WHERE id = #{id}
 	</delete>
     
     <sql id="paramAll">
-    	select id, name, email, avatar, register, access, id_country, id_role, id_language from people
+    	select id, name, email, avatar, register, access, id_country, id_role from te_people
     </sql>
     
     <select id="selectByMonitor" resultMap="people">
 		    SELECT pe.id, pe.name, pe.avatar, pe.id_country, cu.uri, cu.brief_description 
 		FROM 
-		  	curriculum cu JOIN people pe on pe.id = cu.id_people
+		  	te_curriculum cu JOIN people pe on pe.id = cu.id_people
 		WHERE 
 		  true = true
 		  <if test="role != null"> 
 		  	AND pe.id_role = #{role}
 		  </if>
-		  <if test="area != null"> 
-		  	AND cu.id_area = #{area}
+		  <if test="matter != null"> 
+		  	AND cu.id_matter = #{matter}
 		  </if>
 		  <if test="state != null"> 
 		  	AND LOWER(cu.state) like LOWER('%' || #{state} || '%') 

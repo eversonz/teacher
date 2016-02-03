@@ -37,7 +37,7 @@ DELETE - http://localhost:8080/teacher-service/people/{ID}
 
 GET - http://localhost:8080/teacher-service/country
 
-GET - http://localhost:8080/teacher-service/language
+GET - http://localhost:8080/teacher-service/matter
 
 GET - http://localhost:8080/teacher-service/role
 
@@ -47,7 +47,7 @@ POST - http://localhost:8080/teacher-service/curriculum
 
 {
   "id":{idPeople},
-  "area": {"id":1},
+  "matter": {"id":1},
   "uri": "tea_abc",
   "state": "SP",
   "city": "S. Paulo",
@@ -60,7 +60,7 @@ POST - http://localhost:8080/teacher-service/curriculum
 PUT - http://localhost:8080/teacher-service/curriculum/{ID}
 
 {
-  "area": {id},
+  "matter": {id},
   "uri": "___ABC",
   "state": "MG",
   "city": "UBERABA",

@@ -19,19 +19,19 @@ public class CommonController extends RestBaseController{
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.GET, value="/country")
 	public ReturnRest selectCountry() {
-		return returnRest(commonBO.languageSelectAll());
+		return returnRest(commonBO.countrySelectAll());
 	}
 	
 	@ResponseBody
 	@RequestMapping(method=RequestMethod.GET, value="/role")
 	public ReturnRest selectRole() {
-		return returnRest(commonBO.RoleSelectAll());
+		return returnRest(commonBO.roleSelectAll());
 	}
 	
 	@ResponseBody
-	@RequestMapping(method=RequestMethod.GET, value="/language")
+	@RequestMapping(method=RequestMethod.GET, value="/matter")
 	public ReturnRest selectLanguage() {
-		return returnRest(commonBO.languageSelectAll());
+		return returnRest(commonBO.matterSelectAll());
 	}
 
 }

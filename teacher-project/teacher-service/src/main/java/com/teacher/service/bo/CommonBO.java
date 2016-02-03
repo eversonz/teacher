@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.teacher.common.vo.CountryVO;
-import com.teacher.common.vo.LanguageVO;
+import com.teacher.common.vo.MatterVO;
 import com.teacher.common.vo.RoleVO;
 import com.teacher.data.mapper.CountryMapper;
-import com.teacher.data.mapper.LanguageMapper;
+import com.teacher.data.mapper.MatterMapper;
 import com.teacher.data.mapper.RoleMapper;
 
 
@@ -19,7 +19,7 @@ public class CommonBO {
 	@Autowired
 	private CountryMapper countryMapper;
 	@Autowired
-	private LanguageMapper languageMapper;
+	private MatterMapper matterMapper;
 	@Autowired
 	private RoleMapper roleMapper;
 	
@@ -27,11 +27,11 @@ public class CommonBO {
 		return countryMapper.selectAll();
 	}
 
-	public List<RoleVO> RoleSelectAll() {
+	public List<RoleVO> roleSelectAll() {
 		return roleMapper.selectAll();
 	}
 	 
-	public List<LanguageVO> languageSelectAll() {
-		return languageMapper.selectAll();
+	public List<MatterVO> matterSelectAll() {
+		return matterMapper.selectAll();
 	}
 }

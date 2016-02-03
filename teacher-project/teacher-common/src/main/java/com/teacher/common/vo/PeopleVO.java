@@ -7,7 +7,7 @@ public class PeopleVO {
 	private long id;
 	private CountryVO country;
 	private RoleVO role; // Nivel de acesso / Role
-	private LanguageVO language; // lingua nativa
+	private MatterVO matter; // Materia
 	private String name;
 	private String email;
 	private String password;
@@ -16,13 +16,12 @@ public class PeopleVO {
 	private Date access;
 	private CurriculumVO curriculum;
 	
-	public LanguageVO getLanguage() {
-		return language;
+	public MatterVO getMatter() {
+		return matter;
 	}
-	public void setLanguage(LanguageVO language) {
-		this.language = language;
+	public void setMatter(MatterVO matter) {
+		this.matter = matter;
 	}
-	
 	public long getId() {
 		return id;
 	}

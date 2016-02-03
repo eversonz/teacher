@@ -13,41 +13,41 @@
         <result property="briefDescription" column="brief_description"/>
         <result property="description" column="description"/>
         
-        <association property="area" column="id_area" 
-       		select="com.teacher.data.mapper.AreaMapper.selectById"/>
+        <association property="matter" column="id_matter" 
+       		select="com.teacher.data.mapper.MatterMapper.selectById"/>
        		 
     </resultMap>
     
     <insert id="insert" parameterType="com.teacher.common.vo.CurriculumVO">
-		INSERT INTO curriculum
-			(id_people, id_area, uri, state, city, contact, search, brief_description, description)
+		INSERT INTO te_curriculum
+			(id_people, id_matter, uri, state, city, contact, search, brief_description, description)
    		VALUES 
-   			(#{id}, #{area.id}, #{uri}, #{state}, #{city}, #{contact}, #{search}, #{briefDescription}, #{description});
+   			(#{id}, #{matter.id}, #{uri}, #{state}, #{city}, #{contact}, #{search}, #{briefDescription}, #{description});
 	</insert>
 	
 	<update id="update" parameterType="com.teacher.common.vo.CurriculumVO">
 		UPDATE 
-			curriculum
+			te_curriculum
 		SET    		 
-   			id_area=#{area.id}, uri=#{uri}, state=#{state}, city=#{city}
+   			id_matter=#{matter.id}, uri=#{uri}, state=#{state}, city=#{city}
    			,contact=#{contact}, search=#{search}, brief_description=#{briefDescription}, description=#{description}
    		WHERE id_people=#{id};
 	</update>
     
     <delete id="delete" parameterType="com.teacher.common.vo.CurriculumVO">
-		DELETE FROM curriculum WHERE id_people = #{peopleId}
+		DELETE FROM te_curriculum WHERE id_people = #{peopleId}
 	</delete>
     
     <sql id="paramAll">
-    	SELECT id_people, id_area, uri, state, city, contact, search
+    	SELECT id_people, id_matter, uri, state, city, contact, search
     	, brief_description, description 
-    	FROM curriculum
+    	FROM te_curriculum
     </sql>
     
     <select id="selectAll" resultMap="curriculum">
-   		SELECT id_people, id_area, uri, state, city, contact, search, brief_description, description 
+   		SELECT id_people, id_matter, uri, state, city, contact, search, brief_description, description 
 		FROM 
-		  curriculum
+		  te_curriculum
     </select>
 
     <select id="selectByUri" resultMap="curriculum">

@@ -11,7 +11,7 @@
     
     
     <sql id="paramAll">
-    	select id, initials, name from country
+    	select id, initials, name from te_country
     </sql>
     
     <select id="selectAll" resultMap="country">

@@ -26,6 +26,6 @@ public interface PeopleMapper {
 			@Param("language") Long language, @Param("country") Long country);
 	
 	public List<PeopleVO> selectByMonitor(@Param("role") Long role,
-			@Param("area") Long area, @Param("state") String state,
+			@Param("matter") Long matter, @Param("state") String state,
 			@Param("search") String search, @Param("country") Long country);
 }
