@@ -1,0 +1,30 @@
+<!-- Button trigger modal -->
+
+<!-- ISLINK (false|true) for to generated a button or link -->
+<button type="button" ng-show="islink != 'true'" class="btn btn-primary btn-sm" data-toggle="modal" 
+ data-dismiss="modal" data-backdrop="false" data-target="#modalCancelConfirm">
+  {{clickinfo}}
+</button>
+
+<button type="button" ng-show="islink == 'true'" data-backdrop="false" class="btn btn-link" data-toggle="modal" data-target="#modalCancelConfirm">
+  {{clickinfo}}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modalCancelConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+        {{information}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary btn-sm" ng-click="logout()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
