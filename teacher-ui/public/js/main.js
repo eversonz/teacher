@@ -1,15 +1,15 @@
 angular.module('teacher', ['ngRoute', 'ngResource'])
 .config(function($routeProvider, $locationProvider){
 
-	$locationProvider.html5Mode(true);
+	//$locationProvider.html5Mode(true);
 
 
 	$routeProvider.when('/principal', {
-		templateUrl: "partials/principal.html",
+		templateUrl: "partials/index/login.html",
 		controller: "PrincipalController"
 	});
 	
 
-	$routeProvider.otherwise({redirectTo: '/'});
+	$routeProvider.otherwise({redirectTo: '/#principal'});
 
 });

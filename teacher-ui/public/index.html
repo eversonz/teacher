@@ -5,26 +5,30 @@
 	<base href="/" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" /> -->
+	<script type="text/javascript" src="js/lib/jquery-2.2.0.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+	<script type="text/javascript" src="js/lib/bootstrap.js"></script>
 	<script type="text/javascript" src="js/lib/angular.js"></script>
 	<script type="text/javascript" src="js/lib/angular-route.js"></script>
 	<script type="text/javascript" src="js/lib/angular-resource.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/controller/principal-controller.js"></script>
-	
+	<!-- https://bootswatch.com/united/ -->
 	<title>......teacher</title>
 </head>
 <body>
 
+<ng-include src="'partials/common/header.html'"></ng-include>
 
+	<div class="page-header">
+	    <div class="container">
+	      <div class="page-header">
+	      	<ng-view> </ng-view>
+	      </div>
+	    </div>  	
+	</div>
 
-
-<div class="container">
-
-	<ng-view>
-		
-	</ng-view>
-</div>
+<ng-include src="'partials/common/footer.html'"></ng-include>
 
 </body>
 </html>
