@@ -1,18 +1,19 @@
-angular.module("teacher").controller("PrincipalController", function($scope	, $http, $routeParams) {
+angular.module("teacher").controller("PrincipalController", function($scope, $http, $routeParams) {
 
-	console.log("carregou... PrincipalController");
+	$scope.createUser = function() {
+		console.log('createUser................');
+	};
+
+	$scope.login = function() {
+		console.log('login................');
+	};	
 
 	$scope.logout = function() {
 		console.log('logout................');
 	};
-
-	 function logout() {
-		console.log('exec................');
-	};
-
-
-	console.log("carregou... fim PrincipalController");
-
-
+	
+	$scope.resetPassws = function() {
+		console.log('resetPassws................');
+	};		
 
 });

@@ -29,14 +29,23 @@
           <div class="form-group">
             <label class="col-lg-2 control-label"></label>
             <div class="col-lg-10">
-              <button type="submit" style="display: block; width: 100%;" class="btn btn-primary btn-sm">Entrar</button>
+              <button type="submit" ng-click="login()" style="display: block; width: 100%;" class="btn btn-primary btn-sm">Entrar.</button>
             </div>  
 
             <label class="col-lg-2 control-label"></label>
             <div class="col-lg-10"> 
-            <a href="#" class="btn btn-link"><strong>Cadastrar </strong></a>  
+              <a href="#" ng-click="createUser()"class="btn btn-link">
+                <strong>Cadastrar.</strong>
+              </a>  
             <span class="pull-right">
-                <a href="#" class="btn btn-link">Esqueceu a senha?</a>  
+
+
+                <ng-include 
+                    src="'partials/index/reset-passwd.html'" 
+                    ng-controller="PrincipalController" >
+                </ng-include>
+
+
              </span>
             </div>  
 

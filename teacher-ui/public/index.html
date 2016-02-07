@@ -16,13 +16,12 @@
 	<script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/controller/principal-controller.js"></script>
 	<script type="text/javascript" src="partials/directives/components.js"></script>
-	<!-- https://bootswatch.com/united/ -->
+	<!-- https://bootswatch.com/united -->
 	<title>......teacher</title>
 </head>
 <body>
 
-
-<ng-include src="'partials/common/header.html'"></ng-include>
+<ng-include src="'partials/common/header.html'" ng-controller="PrincipalController" ></ng-include>
 
 	<div class="page-header">
 	    <div class="container">
@@ -32,7 +31,7 @@
 	    </div>  	
 	</div>
 
-<ng-include src="'partials/common/footer.html'"></ng-include>
+<ng-include src="'partials/common/footer.html'" ></ng-include>
 
 </body>
 </html>

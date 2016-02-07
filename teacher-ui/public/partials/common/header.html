@@ -13,12 +13,14 @@
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav navbar-right">
           <li>
+
               <modal-confirm-cancel 
                 clickInfo="logout" 
                 isLink="false"
                 title="Logout" 
-                exec="logout"
+                exec="$parent.logout()"
                 information="Are sure?"/>
+
           </li>
         </ul>
       </div>

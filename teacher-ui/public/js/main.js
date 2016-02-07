@@ -10,6 +10,6 @@ angular.module('teacher', ['ngRoute', 'ngResource', 'components'])
 	});
 	
 
-	$routeProvider.otherwise({redirectTo: '/#principal'});
+	$routeProvider.otherwise({redirectTo: '/principal'});
 
 });
