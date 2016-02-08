@@ -12,34 +12,35 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Renovar a senha</h4>
       </div>
-      <form>
+      <form name="$parent.formResetPasswd" ng-submit="resetPassws()" novalidate>
 
-            	   
-		      <div class="modal-body">
-				<div class="row">
-				  <div class="col-lg-12">
-				    <div class="col-lg-12">
-				    	Um alguns minutos sera enviado um email para a renovação da senha.
-      	   				Em caso de demora verifique a caixa de span.
-				    </div>
-				    <div class="col-lg-12">
-				    	&nbsp;	    	
-				    </div>
-				    <div class="form-group">
-				      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-				      <div class="col-lg-9">
-				        <input class="form-control" id="inputEmail" placeholder="Email" 
-				           type="text">
-				      </div>
-				    </div>
-				   </div>  
-				 </div>
-		      </div>
+	      <div class="modal-body">
+			<div class="row">
+			  <div class="col-lg-12">
+			    <div class="col-lg-12">
+			    	Um alguns minutos sera enviado um email para a renovação da senha.
+  	   				Em caso de demora verifique a caixa de span.
+			    </div>
+			    <div class="col-lg-12">
+			    	&nbsp;	    	
+			    </div>
+			    <div class="form-group">
+			      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+			      <div class="col-lg-9">
+			        <input ng-model="people.password" required 
+			          class="form-control" id="inputEmail" placeholder="Email" type="text">
+			      </div>
+			    </div>
+			   </div>  
+			 </div>
+	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancel</button>
-	        <button type="button" class="btn btn-primary btn-sm" ng-click="resetPassws()">Confirm</button>
+	        <button type="submit" 
+	          class="btn btn-primary btn-sm" >Confirm</button>
 	      </div>
       </form>
+
     </div>
   </div>
 </div>

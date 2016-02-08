@@ -11,51 +11,52 @@
   </div>
   <div class="col-lg-4 col-md-4 col-sm-5">
     <div class="sponsor">
-      <form class="form-horizontal">
-        <fieldset>
-          
+
+      
+      <fieldset>
+        <form novalidate name="formLogin"  ng-submit="login()" class="form-horizontal">      
           <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+              <input ng-model="people.login" required 
+                class="form-control" id="inputEmail" placeholder="Email"  type="text">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Senha &nbsp;</label>
-            <div class="col-lg-10">
-              <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Senha &nbsp;</label>
+              <div class="col-lg-10">
+                <input ng-model="people.password" required
+                   class="form-control" id="inputEmail" placeholder="Password" type="password">
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="col-lg-2 control-label"></label>
-            <div class="col-lg-10">
-              <button type="submit" ng-click="login()" style="display: block; width: 100%;" class="btn btn-primary btn-sm">Entrar.</button>
+            <div class="form-group">
+              <label class="col-lg-2 control-label"></label>
+              <div class="col-lg-10">
+                <button type="submit" style="display: block; width: 100%;" 
+                  class="btn btn-primary btn-sm">Entrar.</button>
+              </div>  
             </div>  
-
+          </form>
+          <div class="form-group">
             <label class="col-lg-2 control-label"></label>
             <div class="col-lg-10"> 
-              <a href="#" ng-click="createUser()"class="btn btn-link">
+              <a href="#user" class="btn btn-link">
                 <strong>Cadastrar.</strong>
               </a>  
             <span class="pull-right">
-
-
-                <ng-include 
-                    src="'partials/index/reset-passwd.html'" 
-                    ng-controller="PrincipalController" >
-                </ng-include>
-
-
-             </span>
-            </div>  
-
-          </div>                 
-        </fieldset>
-      </form>
+             <!-- NEW PAGE -->
+              <ng-include 
+                   src="'partials/index/reset-passwd.html'" 
+                   ng-controller="PrincipalController" >
+              </ng-include>
+            </span>
+          </div>  
+        </div>                 
+      </fieldset>
     </div>
   </div>  
 </div>
 <!-- FIM PAGINA LOGIN -->
 
 <!-- SEARCH LOGIN -->
-<ng-include src="'partials/index/search-teacher.html'"></ng-include>
+<ng-include src="'partials/index/show-teachers.html.html'"></ng-include>

@@ -9,6 +9,15 @@ angular.module('teacher', ['ngRoute', 'ngResource', 'components'])
 		controller: "PrincipalController"
 	});
 	
+	$routeProvider.when('/user', {
+		templateUrl: "partials/user/create-update.html",
+		controller: "UserController"
+	});
+
+	$routeProvider.when('/monitor/principal', {
+		templateUrl: "partials/monitor/principal.html",
+		controller: "MonitorController"
+	});
 
 	$routeProvider.otherwise({redirectTo: '/principal'});
 
