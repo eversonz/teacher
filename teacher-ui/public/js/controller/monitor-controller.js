@@ -1,15 +1,10 @@
 angular.module("teacher").controller("MonitorController", function($scope, $http, $routeParams) {
 
-	$scope.people = {};
+	$scope.monitor = {};
 
-	$scope.createOrUpdateUser = function() {
+	$scope.searchPrincipalMonitor = function() {
 
-		console.log('createOrUpdateUser................');
+		console.log('createOrUpdateUser................', searchMonitor);
 
-		if ($scope.formUserCreateUpdate.$valid) {
-			console.log('click................', $scope.people);
-		} else {
-			console.log('click invalid required................', $scope.people);
-		}
 	};
 });
