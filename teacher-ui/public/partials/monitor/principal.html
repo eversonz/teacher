@@ -1,48 +1,9 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="true">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Find</a>
-    </div>
-
-    <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-1" aria-expanded="true">
-
-      <form name="searchMonitor" ng-submit="searchPrincipalMonitor()" 
-          class="navbar-form navbar-left" role="search">    
-        <div class="form-group">
-          <select class="form-control" id="select" placeholder="Country">
-            <option>All Countries</option>
-            <option>Brazil</option>
-            <option>United States</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <select class="form-control" id="select" placeholder="Matter">
-            <option>Matter</option>
-            <option>Language</option>
-            <option>Arithmetic</option>
-            <option>Geography</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Works">
-        </div>
-        <button type="submit"  class="btn btn-default">Submit</button>
-      </form>
-
-    </div>
-  </div>
-</nav>
+<!-- Pesquisa -->
+<ng-include src="'partials/monitor/search-monitor.html'" 
+  ng-controller="MonitorController" ></ng-include>
 
 
-
-
-<!-- PAGINA SEARCH -->
+<!-- PAGINA LIST -->
 <div class="row" style="margin-top:10px;">
   <div class="col-lg-1 col-md-7 col-sm-6">
      <a href="#" class="text-primary">

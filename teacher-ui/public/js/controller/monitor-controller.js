@@ -4,7 +4,12 @@ angular.module("teacher").controller("MonitorController", function($scope, $http
 
 	$scope.searchPrincipalMonitor = function() {
 
-		console.log('createOrUpdateUser................', searchMonitor);
+		if ($scope.formSPrincMonitor.$valid) {
+			console.log('click................', $scope.monitor);
+		} else {
+			console.log('click invalid required................', $scope.monitor);
+		}
+
 
 	};
 });
