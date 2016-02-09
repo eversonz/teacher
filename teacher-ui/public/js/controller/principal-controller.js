@@ -1,10 +1,12 @@
-angular.module("teacher").controller("PrincipalController", function($scope, $http, $routeParams) {
+angular.module("teacher").controller("PrincipalController", function($scope, $http, $routeParams, urlsrv) {
 
 	$scope.people = {};
 
 	$scope.login = function() {
 
-		console.log('login................');
+
+
+		console.log('login................', urlsrv);
 
 		if ($scope.formLogin.$valid) {
 			console.log('click................', $scope.people);

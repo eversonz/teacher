@@ -1,4 +1,4 @@
-angular.module("teacher").controller("MonitorController", function($scope, $http, $routeParams) {
+angular.module("teacher").controller("MonitorController", function($scope, $http, $routeParams, urlsrv) {
 
 	$scope.monitor = {};
 

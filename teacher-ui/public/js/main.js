@@ -1,4 +1,4 @@
-angular.module('teacher', ['ngRoute', 'ngResource', 'components'])
+angular.module('teacher', ['ngRoute', 'ngResource', 'components', 'globalService'])
 .config(function($routeProvider, $locationProvider){
 
 	//$locationProvider.html5Mode(true);
