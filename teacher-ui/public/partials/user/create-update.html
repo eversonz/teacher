@@ -26,17 +26,24 @@
             <div class="form-group">
               <label for="inputCountry" class="col-lg-2 control-label">Country.</label>
               <div class="col-lg-10">
-                <input ng-model="people.country" required
-                   class="form-control" id="inputEmail" placeholder="Country" type="text">
+                <select required ng-model="people.country" class="form-control" id="select" >
+                
+                  <option disabled selected >Select your country</option>
+                  <option value="ar" >Argentina</option>
+                  <option value="br" > Brasil</option>
+                  <option value="us" >United States</option>
+                </select>
               </div>
             </div>
 
             <div class="form-group">
               <label for="inputRole" class="col-lg-2 control-label">Type.</label>
               <div class="col-lg-10">
-                <input ng-model="people.role" required
-                   class="form-control" id="inputRole" placeholder="Teacher or Student" 
-                    type="text">
+                <select  required ng-model="people.role" class="form-control" id="select" >
+                  <option disabled selected>Select your access</option>
+                  <option value="T" >Teacher</option>
+                  <option value="S" >Student</option>
+                </select>
               </div>
             </div>            
 
@@ -49,7 +56,7 @@
             </div>  
 
             <div class="form-group">
-              <label for="inputEmail" class="col-lg-2 control-label">Reapeat.</label>
+              <label for="inputEmail" class="col-lg-2 control-label">Repeat.</label>
               <div class="col-lg-10">
                 <input ng-model="people.email2" required
                    class="form-control" id="inputEmail" placeholder="Confirm your Email" type="text">
@@ -60,15 +67,24 @@
               <label for="inputPassword" class="col-lg-2 control-label">Password. &nbsp;</label>
               <div class="col-lg-10">
                 <input ng-model="people.password" required
-                   class="form-control" id="inputPassword" placeholder="Password" type="text">
+                   class="form-control" id="inputPassword" placeholder="Password" type="password">
               </div>
             </div>            
+
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label"></label>
+              <div class="col-lg-10">
+                Little Text Captcha
+                <input ng-model="people.captcha" required
+                   class="form-control" id="inputPassword" placeholder="Captcha" type="text">
+              </div>
+            </div>  
 
             <div class="form-group">
               <label class="col-lg-2 control-label"></label>
               <div class="col-lg-10">
                 <button type="submit" style="display: block; width: 100%;" 
-                  class="btn btn-primary btn-sm">Entrar.</button>
+                  class="btn btn-primary btn-sm">Cadastrar.</button>
               </div>  
             </div>  
           </form>               
