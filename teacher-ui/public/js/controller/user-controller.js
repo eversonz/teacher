@@ -20,7 +20,7 @@ angular.module("teacher").controller("UserController", function($scope, $http, $
 			} else { // If there is not ID then INSERTs
 
 				if ($scope.people.email != $scope.people.email2){
-					$scope.information = 'Confirm ' + $scope.people.email; 
+					$scope.information = 'Confirm your e-mail ' + $scope.people.email; 
 					$scope.people.email2 = '';
 					angular.element('#bntModalRequiredField').trigger('click');
 					return;
