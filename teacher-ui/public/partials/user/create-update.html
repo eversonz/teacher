@@ -1,23 +1,31 @@
 <!-- PAGINA LOGIN -->
+
+
+<modal-success /> 
+<modal-error />
+<modal-required-field />
+
 <div class="row">
 
-<div class="col-lg-4 col-md-4 col-sm-5">
+<div class="col-lg-5 col-md-5 col-sm-5">
     <div class="sponsor">
-
-    <h3> 
-     <span ng-show="people.name.length > 0">
-       Welcome <strong> {{people.name}} </strong>
-     </span>
-      &nbsp;
-    </h3>
-      
       <fieldset>
         <form novalidate name="formUserCreateUpdate"  ng-submit="createOrUpdateUser()" 
-          class="form-horizontal">      
+          class="form-horizontal css-form">
 
             <div class="form-group">
-              <label for="inputEmail" class="col-lg-2 control-label">Name.</label>
-              <div class="col-lg-10">
+              <label for="inputEmail" class="col-lg-2 "></label>
+              <div class="col-lg-9">
+                <h2>
+                  <span ng-show="people.id">Update</span>
+                  <span ng-show="!people.id">New register</span>
+                </h2>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 ">Name.</label>
+              <div class="col-lg-9">
               <input ng-model="people.name" required 
                 class="form-control" id="inputName" placeholder="Name"  type="text">
               </div>
@@ -25,9 +33,8 @@
 
             <div class="form-group">
               <label for="inputCountry" class="col-lg-2 control-label">Country.</label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <select required ng-model="people.country" class="form-control" id="select" >
-                
                   <option disabled selected >Select your country</option>
                   <option value="ar" >Argentina</option>
                   <option value="br" > Brasil</option>
@@ -38,7 +45,7 @@
 
             <div class="form-group">
               <label for="inputRole" class="col-lg-2 control-label">Type.</label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <select  required ng-model="people.role" class="form-control" id="select" >
                   <option disabled selected>Select your access</option>
                   <option value="T" >Teacher</option>
@@ -49,7 +56,7 @@
 
             <div class="form-group">
               <label for="inputEmail" class="col-lg-2 control-label">Email.</label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <input ng-model="people.email" required
                    class="form-control" id="inputEmail" placeholder="Email" type="text">
               </div>
@@ -57,7 +64,7 @@
 
             <div class="form-group">
               <label for="inputEmail" class="col-lg-2 control-label">Repeat.</label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <input ng-model="people.email2" required
                    class="form-control" id="inputEmail" placeholder="Confirm your Email" type="text">
               </div>
@@ -65,7 +72,7 @@
 
             <div class="form-group">
               <label for="inputPassword" class="col-lg-2 control-label">Password. &nbsp;</label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <input ng-model="people.password" required
                    class="form-control" id="inputPassword" placeholder="Password" type="password">
               </div>
@@ -73,7 +80,7 @@
 
             <div class="form-group">
               <label for="inputPassword" class="col-lg-2 control-label"></label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 Little Text Captcha
                 <input ng-model="people.captcha" required
                    class="form-control" id="inputPassword" placeholder="Captcha" type="text">
@@ -82,9 +89,9 @@
 
             <div class="form-group">
               <label class="col-lg-2 control-label"></label>
-              <div class="col-lg-10">
+              <div class="col-lg-9">
                 <button type="submit" style="display: block; width: 100%;" 
-                  class="btn btn-primary btn-sm">Cadastrar.</button>
+                  class="btn btn-primary btn-sm">Save.</button>
               </div>  
             </div>  
           </form>               
@@ -93,14 +100,16 @@
   </div>  
 
 
-  <div class="col-lg-8 col-md-7 col-sm-6">
-      <h2> Professor</h2>
+  <div class="col-lg-7 col-md-7 col-sm-6">
+      <h3> 
+       <span ng-show="people.name.length > 0">
+         Welcome <strong> {{people.name}} </strong>
+       </span>
+        &nbsp;
+      </h3>
     <p>
-      Executivos tentam <strong> Globo para renovar</strong>
-      minar argumentos da Globo para renovar contratos da Executivos tentam minar  
-      contratos Executivos tentam minar argumentos da Globo para renovar contratos
-      Executivos tentam minar argumentos da Globo para renovar contratos
+      &nbsp;
     </p>
   </div>
 </div>
-<!-- FIM PAGINA LOGIN -->
+<!-- FIM PAGINA -->

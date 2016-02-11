@@ -4,12 +4,39 @@ angular.module("teacher").controller("UserController", function($scope, $http, $
 
 	$scope.createOrUpdateUser = function() {
 
-		console.log('createOrUpdateUser................', urlsrv);
+		$scope.information = null;
 
-		if ($scope.formUserCreateUpdate.$valid) {
-			console.log('click................', $scope.people);
-		} else {
-			console.log('click invalid required................', $scope.people);
+		if ($scope.formUserCreateUpdate.$valid) { // Valid form
+			if ($scope.people.id) { // If there is ID then UPDATE
+				$http.put(urlsrv + '/people/' + $scope.people.id, $scope.people)
+					.success(function () {
+						$scope.information = "Welcome " + people.name;
+						angular.element('#bntModalSuccess').trigger('click');	
+					})
+					.error(function(err){
+						console.log(err);
+						angular.element('#bntModalError').trigger('click');	
+					});
+			} else { // If there is not ID then INSERTs
+
+				if ($scope.people.email != $scope.people.email2){
+					$scope.information = 'Confirm ' + $scope.people.email; 
+					$scope.people.email2 = '';
+					angular.element('#bntModalRequiredField').trigger('click');
+					return;
+				}
+
+				$http.post(urlsrv + '/people', $scope.people)
+					.success(function () {
+						angular.element('#bntModalSuccess').trigger('click');	
+					})
+					.error(function(err){
+						console.log(err);
+						angular.element('#bntModalError').trigger('click');	
+					});
+			}
+		} else { 
+			angular.element('#bntModalRequiredField').trigger('click');
 		}
 	};
 });

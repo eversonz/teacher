@@ -1,0 +1,23 @@
+<!-- Button trigger modal -->
+<button type="button" ng-show="false" class="btn btn-sm" data-toggle="modal" id="bntModalSuccess" data-target="#modalSuccess">
+  bnt
+</button>
+
+<!-- Modal -->
+<div class="modal fade-sm" id="modalSuccess" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title "id="myModalLabel">
+          <p class="text-success">Success</p>
+        </h4>
+      </div>
+      <div class="modal-body">
+        {{information}}
+      </div>
+      <div class="modal-footer center">
+        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>

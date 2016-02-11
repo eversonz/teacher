@@ -5,14 +5,14 @@ angular.module("teacher").controller("PrincipalController", function($scope, $ht
 	$scope.login = function() {
 
 
+		if ($scope.formLogin.$valid) { // Valid form
+
+		} else { 
+			angular.element('#bntModalRequiredField').trigger('click');
+		}
+
 
 		console.log('login................', urlsrv);
-
-		if ($scope.formLogin.$valid) {
-			console.log('click................', $scope.people);
-		} else {
-			console.log('click invalid required................', $scope.people);
-		}
 		
 	};	
 

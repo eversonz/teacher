@@ -1,0 +1,31 @@
+<!-- Button trigger modal -->
+
+<button type="button" ng-show="false" class="btn btn-sm" data-toggle="modal" id="bntModalRequiredField" data-target="#modalRequiredField">
+  bnt
+</button>
+
+<!-- Modal -->
+<div class="modal fade-sm" id="modalRequiredField" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title "id="myModalLabel">
+          <p class="text-danger"> Attention </p>
+        </h4>
+      </div>
+      <div class="modal-body">
+
+        <span ng-show="!information">
+          The red border is a required field
+        </span>
+        <span ng-show="information">
+          {{information}}
+        </span>
+        
+      </div>
+      <div class="modal-footer center">
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
