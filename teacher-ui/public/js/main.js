@@ -10,7 +10,7 @@ angular.module('teacher', ['ngRoute', 'ngResource', 'components', 'globalService
 	});
 	
 	$routeProvider.when('/user', {
-		templateUrl: "partials/user/create-update.html",
+		templateUrl: "partials/user/create.html",
 		controller: "UserController"
 	});
 
